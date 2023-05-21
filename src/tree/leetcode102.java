@@ -18,7 +18,9 @@ public class leetcode102 {
 
     //BFS--迭代方式--借助队列
     public void checkFun(TreeNode node) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
         Queue<TreeNode> que = new LinkedList<TreeNode>();
         que.offer(node);
 
@@ -30,8 +32,12 @@ public class leetcode102 {
                 TreeNode tmpNode = que.poll();
                 itemList.add(tmpNode.val);
 
-                if (tmpNode.left != null) que.offer(tmpNode.left);
-                if (tmpNode.right != null) que.offer(tmpNode.right);
+                if (tmpNode.left != null) {
+                    que.offer(tmpNode.left);
+                }
+                if (tmpNode.right != null) {
+                    que.offer(tmpNode.right);
+                }
                 len--;
             }
             resList.add(itemList);

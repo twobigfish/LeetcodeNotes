@@ -8,7 +8,7 @@ import java.util.LinkedList;
  * @create 2023/5/13 17:54
  */
 
-class MyQueue {
+/*class MyQueue {
     Deque<Integer> deque = new LinkedList<>();
 
     //弹出元素时，比较当前要弹出的数值是否等于队列出口的数值，如果相等则弹出
@@ -60,7 +60,9 @@ class Solution {
             res[num++] = myQueue.peek();
         }
         return res;
-    }
+    }*/
 
-    public class leetcode239 {
-    }
+public class leetcode239 {
+
+
+}
