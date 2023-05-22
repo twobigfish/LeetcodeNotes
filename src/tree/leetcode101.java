@@ -8,6 +8,7 @@ import java.util.LinkedList;
 /**
  * @author dayuu
  * @create 2023/5/14 20:36
+ * 对称二叉树
  */
 public class leetcode101 {
     public boolean isSymmetric(TreeNode root) {

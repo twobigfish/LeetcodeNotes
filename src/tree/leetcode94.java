@@ -5,6 +5,11 @@ import java.util.*;
 /**
  * @author dayuu
  * @create 2023/5/14 15:12
+ * 中序遍历
+ * 二叉树的遍历
+ *    递归法：仅需要简单的调整递归的逻辑顺序
+ *    迭代法：中序遍历特殊***
+ *
  * 一定要掌握前中后序一种迭代的写法，并不因为某种场景的题目一定要用迭代，
  * 而是现场面试的时候，面试官看你顺畅的写出了递归，一般会进一步考察能不能写出相应的迭代。
  */
@@ -57,15 +62,14 @@ public class leetcode94 {
          * 访问节点（遍历节点）和处理节点（将元素放进结果集）不一致的情况。
          * 中序遍历先访问的是中间节点root，因此访问完成后先放入栈中，去寻找或处理它的左节点
          */
-        TreeNode curnode = root;
-        while (curnode != null || !stack.isEmpty()){
-            if (curnode != null){
-                stack.push(curnode);
-                curnode = curnode.left;
+        while (root != null || !stack.isEmpty()){
+            if (root != null){
+                stack.push(root);
+                root = root.left;
             } else {
-                curnode = stack.pop();
-                list.add(curnode.val);
-                curnode = curnode.right;
+                root = stack.pop();
+                list.add(root.val);
+                root = root.right;
             }
         }
         return list;

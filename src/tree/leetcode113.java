@@ -9,7 +9,6 @@ import java.util.List;
  * @description: 路径总和 II
  */
 public class leetcode113 {
-
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
@@ -21,7 +20,6 @@ public class leetcode113 {
     }
 
     void hasPathSum(TreeNode root, int targetSum, List<List<Integer>> result, List<Integer> list) {
-
         targetSum -= root.val;
         list.add(root.val);
         if (root.left == null && root.right == null && targetSum == 0){
