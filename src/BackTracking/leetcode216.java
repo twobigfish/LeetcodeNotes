@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * @author: Dayuu
- * @description: 组合总和III
+ * @description: 组合总和III  比77多了一个条件而已
  */
 
 /* 模板
@@ -27,11 +27,11 @@ public class leetcode216 {
     List<Integer> list = new ArrayList<>();
 
     public List<List<Integer>> combinationSum3(int k, int n) {
-
         backtracking(k, n, 1);
         return res;
 
     }
+
 
     void backtracking(int k, int n, int startindex) {
         if (list.size() == k && n == 0) {
