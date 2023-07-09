@@ -1,5 +1,6 @@
 package tree;
 
+import javax.swing.tree.TreeNode;
 import java.util.*;
 
 /**
@@ -13,7 +14,8 @@ import java.util.*;
  * 一定要掌握前中后序一种迭代的写法，并不因为某种场景的题目一定要用迭代，
  * 而是现场面试的时候，面试官看你顺畅的写出了递归，一般会进一步考察能不能写出相应的迭代。
  */
-class TreeNode {
+
+public class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
