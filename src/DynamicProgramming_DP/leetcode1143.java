@@ -18,7 +18,7 @@ public class leetcode1143 {
         // 初始化 全部为0
         dp[0][0] = 0;
 
-        // dp[][] 不包括边界
+        // dp[][] 元素范围是[0, text.length-1]，不包括边界，所以i、j需要遍历到text.length的位置
         for (int i = 1; i < text1.length() + 1; i++) {
             for (int j = 1; j < text2.length() + 1; j++) {
                 if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
@@ -28,6 +28,9 @@ public class leetcode1143 {
                 }
             }
         }
+        /*
+            元素范围是[0, text.length-1]，i=1时计算的是位置为0的元素
+         */
         return dp[text1.length()][text2.length()];
     }
 }
