@@ -30,7 +30,7 @@ public class leetcode454 {
             for (int j : nums4) {
                 int temp = -(i + j);
                 if (map.containsKey(temp)) {
-                    count += map.get(temp);
+                    count += map.get(temp); // 加上所有符合条件的数量，而不是++/+1
                 }
             }
         }

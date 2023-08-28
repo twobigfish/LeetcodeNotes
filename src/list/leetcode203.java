@@ -4,26 +4,7 @@ package list;
  * @author dayuu
  * @create 2023/4/30 16:02
  */
-/*class ListNode {
-    int val; // 节点的值域
-    ListNode next; // 节点的指针域
-
-    // 节点的构造函数(无参)
-    public ListNode(){
-    }
-
-    // 节点的构造函数(有1个参数)
-    public ListNode(int val) {
-        this.val = val;
-    }
-
-    // 节点的构造函数(有2个参数)
-    public ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
+/*//TODO 涉及到删除节点时，设置dummy节点会更方便，不需要为头节点单独写逻辑，其他情况，是否设置头节点需要单独分析。
 public class leetcode203 {
     *//**
      * 添加虚节点方式

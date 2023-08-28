@@ -15,6 +15,7 @@ import java.util.*;
  * 而是现场面试的时候，面试官看你顺畅的写出了递归，一般会进一步考察能不能写出相应的迭代。
  */
 
+/*
 public class TreeNode {
     int val;
     TreeNode left;
@@ -33,6 +34,7 @@ public class TreeNode {
         this.right = right;
     }
 }
+*/
 
 public class leetcode94 {
     // 法1

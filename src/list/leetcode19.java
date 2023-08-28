@@ -3,6 +3,7 @@ package list;
 /**
  * @author dayuu
  * @create 2023/5/3 15:22
+ * 19. 删除链表的倒数第 N 个结点
  */
 public class leetcode19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {

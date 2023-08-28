@@ -12,9 +12,7 @@ public class leetcode349 {
         if (nums1 == null || nums1.length == 0 || nums2 == null || nums2.length == 0) {
             return new int[0];
         }
-        // hashSet是Set接口的实现类
-        // 使用数组来做哈希的题目，是因为题目都限制了数值的大小。
-        // 这道题目刚开始的时候没有规定的数值的范围
+        // hashSet是Set接口的实现类，是一个不允许有重复元素的集合
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
         // 遍历数据nums1，把数据放入set1

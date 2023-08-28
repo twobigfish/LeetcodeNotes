@@ -7,6 +7,10 @@ import java.util.List;
 /**
  * @author dayuu
  * @create 2023/5/6 16:13
+ * 15. 三数之和
+ * 接下来如何移动left 和right呢， 如果nums[i] + nums[left] + nums[right] > 0 就说明 此时三数之和大了，因为数组是排序后了，所以right下标就应该向左移动，这样才能让三数之和小一些。
+ *
+ * 如果 nums[i] + nums[left] + nums[right] < 0 说明 此时 三数之和小了，left 就向右移动，才能让三数之和大一些，直到left与right相遇为止。
  */
 public class leetcode15 {
     public List<List<Integer>> threeSum(int[] nums) {

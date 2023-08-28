@@ -28,6 +28,7 @@ public class leetcode18 {
                 int right = nums.length - 1;
                 int left = j + 1;
                 while (right > left) {
+                    // nums[k] + nums[i] + nums[left] + nums[right] > target int会溢出
                     long sum = (long) nums[i] + nums[j] + nums[right] + nums[left];
                     if (sum < target) {
                         left++;

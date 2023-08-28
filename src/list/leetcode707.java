@@ -5,7 +5,7 @@ package list;
  * @create 2023/4/30 16:46
  */
 
-// 单链表  链表的索引也是从0开始
+// 单链表  链表的索引也是从0开始，dummy对应的下标为-1，实际的头节点下标为0
 class ListNode {
     int val;
     ListNode next;
@@ -20,19 +20,21 @@ class ListNode {
 
 class MyLinkedList {
     int size;  // size存储链表元素的个数
-    ListNode head;  // dummy头节点
+    ListNode dummy;  // dummy头节点，dummy对应的下标为-1
 
     //初始化链表
     public MyLinkedList() {
         size = 0;
-        head = new ListNode(-1);
+        dummy = new ListNode(0);
     }
 
+    //获取第index个节点的数值，注意index是从0开始的，第0个节点就是头结点
     public int get(int index) {
+        //如果index非法，返回-1
         if (index < 0 || index >= size) {
             return -1;
         }
-        ListNode cur = head;
+        ListNode cur = dummy;
         // 包含1个虚拟头节点，所以查找到第 index+1 个节点
         for (int i = 0; i <= index; i++) {
             cur = cur.next;
@@ -40,10 +42,12 @@ class MyLinkedList {
         return cur.val;
     }
 
+    //在链表最前面插入一个节点，等价于在第0个元素前添加
     public void addAtHead(int val) {
         addAtIndex(0, val);
     }
 
+    //在链表的最后插入一个节点，等价于在(末尾+1)个元素前添加
     public void addAtTail(int val) {
         addAtIndex(size, val);
     }
@@ -60,7 +64,7 @@ class MyLinkedList {
             index = 0;
         }
         // 找到要插入节点的前驱节点
-        ListNode pre = head;
+        ListNode pre = dummy;
         for (int i = 0; i < index; i++) {
             pre = pre.next;
         }
@@ -76,11 +80,11 @@ class MyLinkedList {
             return;
         }
         if (index == 0) {
-            head = head.next;
+            dummy = dummy.next;
             size--;
             return;
         }
-        ListNode pre = head;
+        ListNode pre = dummy;
         for (int i = 0; i < index; i++) {
             pre = pre.next;
         }

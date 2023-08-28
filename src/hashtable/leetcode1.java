@@ -18,11 +18,11 @@ public class leetcode1 {
         Map<Integer, Integer> map = new HashMap<>();
         int[] result = new int[2];
         // 方法1
-/*        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int tmp = target - nums[i]; // 遍历当前元素，并在map中寻找是否有匹配的key
             if (map.containsKey(tmp)) {
                 // 因为先找后插入的方式，结果的顺序会相反（虽然本题没有要求顺序）
-                result[1] = i; // 防止重复元素的情况[3,3] 6
+                result[1] = i; // 防止重复元素的情况[3,3] 6   不能写成 result[1] = map.get(nums[i])
                 result[0] = map.get(tmp);
                 break;
             }
@@ -30,7 +30,7 @@ public class leetcode1 {
             // 为什么不在前面单独使用一个for循环把nums中的数据放入map？
             // 因为数组中同一个元素在答案里不能重复出现
             map.put(nums[i], i);
-        }*/
+        }
 
         // 方法2
         for (int i = 0; i < nums.length; i++) {
@@ -40,7 +40,7 @@ public class leetcode1 {
         for (int i = 0; i < nums.length; i++) {
             int tmp = target - nums[i]; // 遍历当前元素，并在map中寻找是否有匹配的key
             if (map.containsKey(tmp) && i != map.get(tmp)) {
-                result[1] = i;
+                result[1] = i; // 不能写成 result[1] = map.get(nums[i])
                 result[0] = map.get(tmp);
                 break;
             }

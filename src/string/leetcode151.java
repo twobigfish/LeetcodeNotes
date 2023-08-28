@@ -11,7 +11,7 @@ public class leetcode151 {
      * 2.反转整个字符串
      * 3.反转各个单词
      */
-    /*public String reverseWords(String s) {
+    public String reverseWords(String s) {
         StringBuilder stringBuilder = removeSpace(s);
         reverseString(stringBuilder, 0, stringBuilder.length() - 1);
         reverseEachWord(stringBuilder);
@@ -29,7 +29,7 @@ public class leetcode151 {
         while (left <= right) {
             if (s.charAt(left) != ' ') {
                 stringBuilder.append(s.charAt(left));
-                // 去除中间多余的空格
+            // TODO 去除中间多余的空格：判断sb中末尾元素是否是空格，而不是判断s的下一个  （二刷时，这里没写出来，其他的思路都对）
             } else if (stringBuilder.charAt(stringBuilder.length() - 1) != ' ') {
                 stringBuilder.append(' ');
             }
@@ -39,6 +39,8 @@ public class leetcode151 {
     }
 
     // 2.反转整个字符串
+    // 反转字符串
+    // StringBuilder有个reverse()方法
     public void reverseString(StringBuilder sb, int left, int right) {
         while (left < right) {
             char temp = sb.charAt(left);
@@ -54,22 +56,22 @@ public class leetcode151 {
         int left = 0;
         int right = 1;
         while (left < sb.length()) {
-            *//*
+            /*
                 while (sb.charAt(right) != ' ' && right < sb.length()) right++;
                 错误原因：应该是先判断也没有越界，再去判断是否为' '
-             *//*
+             */
             while (right < sb.length() && sb.charAt(right) != ' ') right++;
             reverseString(sb, left, right - 1);
             left = right + 1;
             right = left + 1;
         }
-    }*/
+    }
 
     /**
      * 方法2 法2
      * 创建新字符数组填充。时间复杂度O(n) 空间复杂度O(n)
      */
-    public String reverseWords(String s) {
+    /*public String reverseWords(String s) {
         //源字符数组
         char[] initArr = s.toCharArray();
         //新字符数组
@@ -96,5 +98,5 @@ public class leetcode151 {
         } else {
             return new String(newArr, 0, j - 1);
         }
-    }
+    }*/
 }

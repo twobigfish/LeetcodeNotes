@@ -3,6 +3,7 @@ package list;
 /**
  * @author dayuu
  * @create 2023/4/30 17:30
+ * 反转链表
  */
 /*class ListNode {
     int val;
@@ -20,7 +21,7 @@ package list;
         this.val = val;
     }
 }
-
+*/
 public class leetcode206 {
     // 双指针
     public ListNode reverseList(ListNode head) {
@@ -46,8 +47,8 @@ public class leetcode206 {
         ListNode tmp = cur.next;
         cur.next = pre;
         // 下面这两步赋值操作在reverse方法中实现
-        *//* pre = cur;
-        cur = tmp;*//*
+        //pre = cur;
+        //cur = tmp;
         return reverse(tmp, cur);
     }
-}*/
+}

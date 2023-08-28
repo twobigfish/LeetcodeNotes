@@ -3,6 +3,7 @@ package array;
 /**
  * @author dayuu
  * @create 2023/4/29 23:15
+ * 59.螺旋矩阵II
  */
 public class leetcode59 {
     public int[][] generateMatrix(int n) {
@@ -38,5 +39,45 @@ public class leetcode59 {
             result[start][start] = count;
         }
         return result;
+    }
+
+    // 更好理解
+    //https://leetcode.cn/problems/spiral-matrix-ii/solutions/12594/spiral-matrix-ii-mo-ni-fa-she-ding-bian-jie-qing-x/
+    public int[][] generateMatrix1(int n) {
+        int[][] res = new int[n][n];
+        int up = 0;
+        int down = n - 1;
+        int left = 0;
+        int right = n - 1;
+        int num = 1;
+
+        while (up <= down && left <= right) {
+            for (int j = left; j <= right; j++) {
+                res[up][j] = num++;
+            }
+            up++;
+
+            for (int i = up; i <= down; i++) {
+                res[i][right] = num++;
+            }
+            right--;
+
+            /*if (up > down || left > right) {
+                break;
+            }*/
+
+            for (int j = right; j >= left; j--) {
+                res[down][j] = num++;
+            }
+            down--;
+
+            for (int i = down; i >= up; i--) {
+                res[i][left] = num++;
+            }
+            left++;
+
+        }
+
+        return res;
     }
 }

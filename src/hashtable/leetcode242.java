@@ -6,6 +6,7 @@ package hashtable;
  */
 public class leetcode242 {
     public boolean isAnagram(String s, String t) {
+        // 使用数组来做哈希的题目，是因为题目都限制了数值的大小。如果哈希值比较少、特别分散、跨度非常大，使用数组就造成空间的极大浪费。
         int[] record = new int[26];
         for (int i = 0; i < s.length(); i++) {
             record[s.charAt(i) - 'a']++; // 并不需要记住字符a的ASCII，只要求出一个相对数值就可以了

@@ -3,8 +3,9 @@ package string;
 /**
  * @author dayuu
  * @create 2023/5/7 17:35
- *
+ * KMP 前缀表
  * 参考  https://blog.csdn.net/yearn520/article/details/6729426
+ *
  */
 public class leetcode28 {
     //前缀表（不减一）Java实现
@@ -34,16 +35,18 @@ public class leetcode28 {
      * 3. 如此可以知道substr【0, j-1】与substr【i-j+1, i】总是相等的；
      * 4. 所以若substr【j】!=substr【i】时，j要根据其之前确定的next【】数组值往前回溯，并不断比较substr【j】和substr【i】（因为前后缀要相等，最后一位必须要相等），以确定新的最长相等前后缀长度
      * 0--j看作模式串，1--i看作文本串
+     * 不是abccba，而是abcabc这种对称
      */
     private void getNext(int[] next, String s) {
         int j = 0; // j指向前缀末尾位置
-        next[0] = 0;
+        next[0] = 0; // 初始化next数组
         // i指向后缀末尾位置
         for (int i = 1; i < s.length(); i++) {
             // 0--j看作模式串，1--i看作文本串  前后缀不相同
             while (j > 0 && s.charAt(j) != s.charAt(i)) // j要保证大于0，因为下面有取j-1作为数组下标的操作
-                j = next[j - 1]; // 注意这里，是要找前一位的对应的回退位置了
+                j = next[j - 1]; // 注意这里，是要找前一位的对应的回退位置
             // 找到相同的前后缀
+            // j代表最长相等前缀的后一位，因为数组下标从0开始，故j的值也能代表最长相等前后缀的长度值，每当substr【j】=substr【i】时，长度+1，即j++；
             if (s.charAt(j) == s.charAt(i))
                 j++;
             next[i] = j;
